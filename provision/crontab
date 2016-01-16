@@ -1,0 +1,10 @@
+# Run scripts in "/opt/*/cron/{interval}" on regular intervals
+#
+# Allows us to more cleanly manage cron tasks per application when
+# there are potentially multiple applications on a single server
+#
+* * * * * find /opt/*/cron/ -name minutely -type f | sh
+0 * * * * find /opt/*/cron/ -name hourly -type f | sh
+0 1 * * * find /opt/*/cron/ -name daily -type f | sh
+0 * * * 0 find /opt/*/cron/ -name weekly -type f | sh
+0 0 1 * * find /opt/*/cron/ -name monthly -type f | sh
