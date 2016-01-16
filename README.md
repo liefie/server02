@@ -39,7 +39,7 @@ During server provisioning, a new SSH user named "deploy" is created which can b
 
 You can require this using repository using Composer
 
-    composer require adamnicholson/server01
+    composer require adamnicholson/server01 --dev
 
 
 Then you might want a `Vagrantfile` in your project that looks something like this
